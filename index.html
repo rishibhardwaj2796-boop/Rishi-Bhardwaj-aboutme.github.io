@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rishi Bhardwaj - Campus Talent Strategist & Employer Brand Architect</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #f5f1e8;
+            --bg-secondary: #fdfbf7;
+            --bg-tertiary: #ebe7dc;
+            --text-primary: #2c2416;
+            --text-secondary: #5d4e37;
+            --text-muted: #7a6f5d;
+            --accent-primary: #1a4d2e;
+            --accent-hover: #2d6a4f;
+            --border-subtle: rgba(42, 36, 22, 0.15);
+            --shadow-sm: rgba(0, 0, 0, 0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(245, 241, 232, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-subtle);
+            z-index: 1000;
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.25rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.875rem;
+            transition: color 0.2s ease;
+        }
+
+        nav a:hover {
+            color: var(--text-primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 8rem 2rem 4rem;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .hero-label {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            letter-spacing: 0.05em;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.03em;
+        }
+
+        .hero-tagline {
+            font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+            color: var(--text-secondary);
+            max-width: 800px;
+            line-height: 1.5;
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+        }
+
+        .hero-description {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            line-height: 1.7;
+            margin-bottom: 3rem;
+        }
+
+        .highlight {
+            color: var(--accent-primary);
+            font-weight: 600;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            max-width: 800px;
+            margin: 3rem 0;
+        }
+
+        .stat {
+            border-left: 2px solid var(--accent-primary);
+            padding-left: 1.5rem;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            line-height: 1;
+            display: block;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.875rem 1.75rem;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+            font-size: 0.875rem;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--accent-primary);
+            color: #fdfbf7;
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-hover);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(26, 77, 46, 0.2);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-primary);
+            border: 1px solid var(--border-subtle);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--text-secondary);
+            background: var(--bg-secondary);
+        }
+
+        /* Section Styling */
+        section {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+            letter-spacing: 0.05em;
+        }
+
+        .section-title {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 800;
+            margin-bottom: 3rem;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .about-text {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .about-features {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            padding: 2.5rem;
+            box-shadow: 0 1px 3px var(--shadow-sm);
+        }
+
+        .feature-item {
+            padding: 1.5rem 0;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .feature-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .feature-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-desc {
+            color: var(--text-secondary);
+            font-size: 0.9375rem;
+            line-height: 1.6;
+        }
+
+        /* Experience Section */
+        .experience-item {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            transition: all 0.2s ease;
+            box-shadow: 0 1px 3px var(--shadow-sm);
+        }
+
+        .experience-item:hover {
+            border-color: var(--accent-primary);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(26, 77, 46, 0.12);
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .exp-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.01em;
+        }
+
+        .exp-company {
+            font-size: 1.0625rem;
+            color: var(--accent-primary);
+            font-weight: 600;
+        }
+
+        .exp-date {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .exp-description {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            font-size: 1.0625rem;
+            line-height: 1.7;
+        }
+
+        .exp-highlights {
+            display: grid;
+            gap: 0.75rem;
+        }
+
+        .exp-highlights li {
+            color: var(--text-secondary);
+            padding-left: 1.5rem;
+            position: relative;
+            line-height: 1.7;
+            font-size: 0.9375rem;
+        }
+
+        .exp-highlights li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent-primary);
+            font-weight: 700;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-category {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.2s ease;
+            box-shadow: 0 1px 3px var(--shadow-sm);
+        }
+
+        .skill-category:hover {
+            border-color: var(--accent-primary);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(26, 77, 46, 0.12);
+        }
+
+        .skill-category-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            background: var(--bg-tertiary);
+            color: var(--text-secondary);
+            padding: 0.5rem 0.875rem;
+            border-radius: 6px;
+            font-size: 0.8125rem;
+            font-weight: 500;
+            border: 1px solid var(--border-subtle);
+            transition: all 0.2s ease;
+        }
+
+        .skill-tag:hover {
+            background: var(--accent-primary);
+            color: #fdfbf7;
+            border-color: var(--accent-primary);
+        }
+
+        /* Education Section */
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .education-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            padding: 2.5rem;
+            transition: all 0.2s ease;
+            box-shadow: 0 1px 3px var(--shadow-sm);
+        }
+
+        .education-card:hover {
+            border-color: var(--accent-primary);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(26, 77, 46, 0.12);
+        }
+
+        .education-degree {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .education-institution {
+            font-size: 1.0625rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .education-date {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .education-note {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-subtle);
+            color: var(--accent-primary);
+            font-size: 0.9375rem;
+            font-weight: 600;
+        }
+
+        /* Certifications */
+        .cert-list {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .cert-item {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            padding: 1.5rem 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            transition: all 0.2s ease;
+            box-shadow: 0 1px 3px var(--shadow-sm);
+        }
+
+        .cert-item:hover {
+            border-color: var(--accent-primary);
+            transform: translateX(4px);
+            box-shadow: 0 4px 12px rgba(26, 77, 46, 0.12);
+        }
+
+        .cert-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--accent-primary);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.25rem;
+            color: #fdfbf7;
+            flex-shrink: 0;
+        }
+
+        .cert-title {
+            font-size: 1.0625rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            padding: 4rem;
+            text-align: center;
+            box-shadow: 0 1px 3px var(--shadow-sm);
+        }
+
+        .contact-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .contact-description {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            line-height: 1.7;
+        }
+
+        .contact-methods {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 0.625rem;
+            padding: 0.875rem 1.75rem;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-subtle);
+            border-radius: 6px;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.875rem;
+            transition: all 0.2s ease;
+        }
+
+        .contact-link:hover {
+            background: var(--accent-primary);
+            border-color: var(--accent-primary);
+            color: #fdfbf7;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(26, 77, 46, 0.2);
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border-subtle);
+            padding: 3rem 2rem;
+            text-align: center;
+            color: var(--text-secondary);
+        }
+
+        footer p {
+            margin-bottom: 0.75rem;
+            font-size: 0.875rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            margin-top: 1.5rem;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-primary);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .hero-stats {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .education-grid,
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 4rem 1.5rem;
+            }
+
+            .experience-item,
+            .contact {
+                padding: 2rem;
+            }
+
+            .contact-methods {
+                flex-direction: column;
+            }
+        }
+
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-content > * {
+            animation: fadeIn 0.6s ease-out backwards;
+        }
+
+        .hero-label { animation-delay: 0.1s; }
+        .hero h1 { animation-delay: 0.2s; }
+        .hero-tagline { animation-delay: 0.3s; }
+        .hero-description { animation-delay: 0.4s; }
+        .hero-stats { animation-delay: 0.5s; }
+        .cta-buttons { animation-delay: 0.6s; }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="#" class="logo">Rishi Bhardwaj</a>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#expertise">Expertise</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-label">Campus Talent Strategist</div>
+            <h1>Rishi Bhardwaj</h1>
+            <p class="hero-tagline">Building high-impact campus recruiting engines that connect top talent with transformative opportunities.</p>
+            <p class="hero-description">
+                I don't just fill roles—I architect talent pipelines. From IITs and NITs to B-Schools and Design Schools, 
+                I've onboarded <span class="highlight">2000+ graduates</span> and transformed campus hiring into a strategic function 
+                that drives employer brand and long-term organizational growth.
+            </p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number">6.5+</span>
+                    <span class="stat-label">Years in HR</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">2000+</span>
+                    <span class="stat-label">Candidates Onboarded</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">250+</span>
+                    <span class="stat-label">Annual Campus Hires</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">30%</span>
+                    <span class="stat-label">Brand Engagement Lift</span>
+                </div>
+            </div>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                <a href="https://www.linkedin.com/in/rishibhardwaj2796/" target="_blank" class="btn btn-secondary">LinkedIn Profile</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="section-label">Who I Am</div>
+        <h2 class="section-title">About</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>
+                    Over <span class="highlight">6.5 years</span>, I've specialized in transforming campus recruitment from a transactional hiring process 
+                    into a strategic talent acquisition function. My expertise spans the entire talent lifecycle—from employer branding 
+                    and campus relationship building to structured assessments, stakeholder management, and seamless onboarding.
+                </p>
+                <p>
+                    I've recruited across <span class="highlight">Audit, Tax, Consulting, Data Analytics, IT, Design, Business Development, 
+                    and AI roles</span>, working with premier institutions including Delhi University, Tier 1 NITs, IITs, B-Schools, and 
+                    Design Schools. My approach combines data-driven decision-making with human-centered engagement to build 
+                    high-density talent pipelines.
+                </p>
+                <p>
+                    From developing campus processes from scratch to implementing global frameworks adapted for the Indian market, 
+                    I bridge strategy and execution—turning hiring goals into measurable outcomes while strengthening employer brand 
+                    across campuses nationwide.
+                </p>
+            </div>
+            <div class="about-features">
+                <div class="feature-item">
+                    <div class="feature-title">Strategic Campus Operations</div>
+                    <div class="feature-desc">Developed end-to-end campus recruitment processes, budget planning, and multi-stakeholder coordination across tech and non-tech functions.</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-title">Employer Brand Architect</div>
+                    <div class="feature-desc">Led branding events, PPTs, webinars, and leadership talks resulting in 30% increase in application volume from target campuses.</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-title">Data-Driven Hiring</div>
+                    <div class="feature-desc">Leverage MIS reporting, compensation benchmarking, and batch profile analysis for smarter candidate selection and offer decisions.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="section-label">Career Journey</div>
+        <h2 class="section-title">Experience</h2>
+
+        <div class="experience-item">
+            <div class="exp-header">
+                <div>
+                    <h3 class="exp-title">Campus Talent Acquisition (Senior Recruiter)</h3>
+                    <div class="exp-company">C3 India Delivery Centre (Crowe Horwath IT Services LLP)</div>
+                </div>
+                <div class="exp-date">April 2022 - Present</div>
+            </div>
+            <p class="exp-description">
+                Leading campus recruitment strategy and execution for one of India's premier professional services firms, 
+                managing hiring across Audit, Tax, Consulting, Data Analytics, IT, Design, and AI roles.
+            </p>
+            <ul class="exp-highlights">
+                <li>Developed campus recruitment process from ground up, establishing structured frameworks for screening, assessment, and onboarding</li>
+                <li>Lead a team of 2 members, managing both tech and non-tech hiring pipelines with focus on quality and candidate experience</li>
+                <li>Implemented US-based hiring processes adapted for Indian market dynamics, driving process excellence and compliance</li>
+                <li>Achieved yearly hiring target of 250+ campus graduates and interns through strategic campus partnerships</li>
+                <li>Drove 30% increase in applications through multiple branding events including Pre-Placement Talks, Webinars, and Leadership Talks</li>
+                <li>Collaborate with global marketing and communications team to execute campus branding strategy for India geography</li>
+                <li>SPOC for all campus HR queries, ensuring seamless stakeholder coordination and candidate engagement from offer to onboarding</li>
+                <li>Budget planning and execution for campus recruitment activities, ensuring ROI on campus investments</li>
+                <li>Market intelligence gathering and compensation benchmarking aligned with internal parity and rewards framework</li>
+            </ul>
+        </div>
+
+        <div class="experience-item">
+            <div class="exp-header">
+                <div>
+                    <h3 class="exp-title">Associate University Recruiter</h3>
+                    <div class="exp-company">Gartner</div>
+                </div>
+                <div class="exp-date">Aug 2021 - Apr 2022</div>
+            </div>
+            <p class="exp-description">
+                Managed campus hiring for IT, Consulting, Research & Design business units at a global research and advisory firm.
+            </p>
+            <ul class="exp-highlights">
+                <li>Recruited from top-tier business, engineering, and design schools across India</li>
+                <li>Pioneered batch profile analysis methodology for enhanced candidate shortlisting and quality improvements</li>
+                <li>Developed strategic campus relationships to secure premium placement slots at target institutions</li>
+                <li>Led virtual interview coordination, ensuring seamless candidate experience during remote hiring</li>
+                <li>Executed employer branding initiatives using CRM tools to strengthen campus presence</li>
+                <li>Multiple stakeholder management across global teams and escalation resolution</li>
+            </ul>
+        </div>
+
+        <div class="experience-item">
+            <div class="exp-header">
+                <div>
+                    <h3 class="exp-title">Talent Acquisition Representative</h3>
+                    <div class="exp-company">Amdocs</div>
+                </div>
+                <div class="exp-date">May 2019 - Aug 2021</div>
+            </div>
+            <p class="exp-description">
+                Started as HR Intern and progressed to full-time TA role, ultimately onboarding 750+ campus graduates 
+                while leading the Amdocs Talent Magnet Program.
+            </p>
+            <ul class="exp-highlights">
+                <li>Successfully onboarded 750+ campus graduates with continuous engagement from offer through joining</li>
+                <li>Led Amdocs Talent Magnet Program, driving campus brand visibility and talent pipeline development</li>
+                <li>Created campus marketing videos showcasing culture, opportunities, and employee value proposition</li>
+                <li>Strategic placement of advertisements and candidate pool generation for specialized career opportunities</li>
+                <li>Collaborated with external vendors to execute specialized hiring campaigns and internal mobility initiatives</li>
+                <li>Leveraged social media and online job boards for employer branding and candidate engagement</li>
+                <li>Conducted screening, credential evaluation, and initial interviews for campus recruitment cycles</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Skills/Expertise Section -->
+    <section id="expertise">
+        <div class="section-label">What I Bring</div>
+        <h2 class="section-title">Expertise</h2>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3 class="skill-category-title">Talent Acquisition</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Campus Recruitment</span>
+                    <span class="skill-tag">Sourcing</span>
+                    <span class="skill-tag">Candidate Screening</span>
+                    <span class="skill-tag">Assessment Design</span>
+                    <span class="skill-tag">Stakeholder Management</span>
+                    <span class="skill-tag">Offer Management</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3 class="skill-category-title">Employer Branding</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Campus Branding</span>
+                    <span class="skill-tag">Event Management</span>
+                    <span class="skill-tag">Video Editing</span>
+                    <span class="skill-tag">Social Media</span>
+                    <span class="skill-tag">PPT Delivery</span>
+                    <span class="skill-tag">Leadership Talks</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3 class="skill-category-title">Data & Analytics</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">MIS Reporting</span>
+                    <span class="skill-tag">Advanced Excel</span>
+                    <span class="skill-tag">PowerBI Dashboard</span>
+                    <span class="skill-tag">Data Interpretation</span>
+                    <span class="skill-tag">Market Intelligence</span>
+                    <span class="skill-tag">Compensation Benchmarking</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3 class="skill-category-title">Technical Tools</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">SAP HCM</span>
+                    <span class="skill-tag">Workday</span>
+                    <span class="skill-tag">Avature CRM</span>
+                    <span class="skill-tag">MS Office Suite</span>
+                    <span class="skill-tag">Graphic Design</span>
+                    <span class="skill-tag">Content Creation</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3 class="skill-category-title">Strategic Capabilities</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Budget Planning</span>
+                    <span class="skill-tag">Process Development</span>
+                    <span class="skill-tag">Team Leadership</span>
+                    <span class="skill-tag">Data-Driven Decisions</span>
+                    <span class="skill-tag">Virtual Events</span>
+                    <span class="skill-tag">In-Person Events</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3 class="skill-category-title">Recruitment Domains</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Tech Hiring</span>
+                    <span class="skill-tag">Non-Tech Hiring</span>
+                    <span class="skill-tag">Design Hiring</span>
+                    <span class="skill-tag">STEM Hiring</span>
+                    <span class="skill-tag">Business Development</span>
+                    <span class="skill-tag">AI Roles</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <div class="section-label">Academic Foundation</div>
+        <h2 class="section-title">Education</h2>
+        <div class="education-grid">
+            <div class="education-card">
+                <h3 class="education-degree">Master of Business Administration</h3>
+                <div class="education-institution">Amity University Mumbai</div>
+                <div class="education-date">June 2019</div>
+            </div>
+            <div class="education-card">
+                <h3 class="education-degree">Bachelor of Business Administration</h3>
+                <div class="education-institution">Amity University Noida</div>
+                <div class="education-date">June 2017</div>
+                <div class="education-note">★ Merit Scholarship Recipient</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section>
+        <div class="section-label">Professional Development</div>
+        <h2 class="section-title">Certifications</h2>
+        <div class="cert-list">
+            <div class="cert-item">
+                <div class="cert-icon">HR</div>
+                <div class="cert-title">Certification in Human Resource Business Partnering</div>
+            </div>
+            <div class="cert-item">
+                <div class="cert-icon">EB</div>
+                <div class="cert-title">Employer Branding Strategy and Process</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="contact">
+            <h2 class="contact-title">Let's Connect</h2>
+            <p class="contact-description">
+                Whether you're looking to build a campus hiring function from scratch, scale your employer brand, 
+                or discuss talent acquisition strategies, I'd love to hear from you.
+            </p>
+            <div class="contact-methods">
+                <a href="mailto:rishibhardwaj2796@gmail.com" class="contact-link">
+                    <span>✉</span>
+                    <span>Email Me</span>
+                </a>
+                <a href="https://www.linkedin.com/in/rishibhardwaj2796/" target="_blank" class="contact-link">
+                    <span>in</span>
+                    <span>LinkedIn</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Rishi Bhardwaj. All rights reserved.</p>
+        <p>Campus Talent Strategist | Employer Brand Architect | HR Professional</p>
+        <div class="footer-links">
+            <a href="#about">About</a>
+            <a href="#experience">Experience</a>
+            <a href="#expertise">Expertise</a>
+            <a href="#education">Education</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </footer>
+</body>
+</html>
